@@ -4,13 +4,21 @@ const VueRouter = require('vue-router');
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  history: true,
   saveScrollPosition: true,
 });
 
 router.map({
   '/': {
+    name: 'index',
     component: require('./pages/index.vue'),
+  },
+  '/add': {
+    name: 'add',
+    component: require('./pages/add.vue'),
+  },
+  '/modify/:id': {
+    name: 'modify',
+    component: require('./pages/modify.vue'),
   },
 });
 
